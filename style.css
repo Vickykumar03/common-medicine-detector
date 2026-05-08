@@ -1,0 +1,268 @@
+/* style.css - All styling for the Prescription Reader */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', 'Poppins', 'Roboto', sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.app-card {
+    background: white;
+    border-radius: 32px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.header .badge {
+    font-size: 0.8rem;
+    background: rgba(255,255,255,0.2);
+    padding: 5px 12px;
+    border-radius: 50px;
+}
+
+.header p {
+    opacity: 0.9;
+    font-size: 1rem;
+}
+
+.content {
+    padding: 40px;
+}
+
+.upload-section {
+    background: #f7f9fc;
+    border: 3px dashed #cbd5e0;
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 30px;
+}
+
+.upload-section:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+}
+
+.upload-icon {
+    font-size: 64px;
+    margin-bottom: 15px;
+}
+
+.upload-section h3 {
+    color: #2d3748;
+    margin-bottom: 10px;
+}
+
+.upload-section p {
+    color: #718096;
+    margin-bottom: 15px;
+}
+
+.file-input {
+    display: none;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: #4a5568;
+}
+
+.btn-secondary:hover {
+    background: #cbd5e0;
+    transform: translateY(-1px);
+}
+
+.preview-area {
+    text-align: center;
+    margin: 20px 0;
+    display: none;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border: 2px solid #e2e8f0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+    display: none;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    width: 0%;
+    transition: width 0.3s;
+    border-radius: 10px;
+}
+
+.result-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #f3f4f6 100%);
+    border-radius: 24px;
+    padding: 25px;
+    margin-top: 25px;
+    border-left: 5px solid #667eea;
+}
+
+.result-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #667eea;
+    font-weight: 700;
+}
+
+.medicine-name {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #2d3748;
+    margin: 12px 0;
+    word-break: break-word;
+}
+
+.ocr-text {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #4a5568;
+    border: 1px solid #e2e8f0;
+    max-height: 200px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.confidence {
+    margin-top: 12px;
+    padding: 10px;
+    background: #e6f7e6;
+    border-radius: 12px;
+    color: #2e7d32;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.6s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.status-text {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 0.9rem;
+    color: #718096;
+    min-height: 50px;
+}
+
+.drug-list {
+    font-size: 0.8rem;
+    color: #718096;
+    margin-top: 15px;
+    text-align: center;
+    padding: 12px;
+    background: #f7f9fc;
+    border-radius: 16px;
+}
+
+@media (max-width: 640px) {
+    .content {
+        padding: 20px;
+    }
+    .medicine-name {
+        font-size: 1.5rem;
+    }
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    .upload-section {
+        padding: 25px;
+    }
+    .btn {
+        padding: 10px 20px;
+    }
+}
