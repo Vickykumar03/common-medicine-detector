@@ -43,7 +43,7 @@
 Just open `index.html` in any modern browser:
 
 ```bash
-https://github.com/Vickykumar03/common-medicine-detector.git
+git clone https://github.com/Vickykumar03/common-medicine-detector.git
 cd common-medicine-detector
 # Open index.html in your browser
 ```
